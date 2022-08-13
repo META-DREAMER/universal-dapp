@@ -40,6 +40,10 @@ While it's pretty barebones, it does a lot of the annoying config for you. The f
 
 You can add other folders inside of `packages/` if you know what you're doing and have a good reason to.
 
+## Prerequisites
+
+- Enable [Corepack](https://yarnpkg.com/getting-started/install): `corepack enable`
+
 ## 🏁 Start the app
 
 - Install dependencies: `yarn`

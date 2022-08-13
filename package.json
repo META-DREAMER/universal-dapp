@@ -1,10 +1,11 @@
 {
-  "name": "solito-blank",
+  "name": "md-wtf",
   "private": true,
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "packageManager": "yarn@3.2.2",
   "devDependencies": {
     "@types/react": "^17.0.39",
     "@types/react-native": "^0.67.2",

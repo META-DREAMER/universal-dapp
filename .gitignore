@@ -24,7 +24,6 @@ project.xcworkspace
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 local.properties
@@ -35,6 +34,14 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # BUCK
 buck-out/
