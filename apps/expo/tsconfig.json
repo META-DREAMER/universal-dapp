@@ -1,3 +1,9 @@
 {
-  "extends": "../../tsconfig"
+  "extends": "tsconfig/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "typeRoots": [
+      "expo-router/ts-declarations"
+    ]
+  }
 }

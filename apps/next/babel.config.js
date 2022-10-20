@@ -1,7 +1,9 @@
-{
+module.exports = {
   "presets": [
     "next/babel",
-    ["babel-preset-expo", { "jsxRuntime": "automatic" }]
+    [
+      "babel-preset-expo"
+    ]
   ],
   "plugins": [
     ["@babel/plugin-proposal-class-properties", { "loose": true }],

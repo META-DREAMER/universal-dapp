@@ -1,8 +1,14 @@
 import { Provider } from 'app/provider'
 import Head from 'next/head'
 import React from 'react'
-import type { SolitoAppProps } from 'solito'
+import { type SolitoAppProps } from 'solito'
 import 'raf/polyfill'
+
+// FIXME need reanimated update, see https://github.com/software-mansion/react-native-reanimated/issues/3355
+if (process.browser) {
+  // @ts-expect-error temp fix
+  window._frameTimestamp = null
+}
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (

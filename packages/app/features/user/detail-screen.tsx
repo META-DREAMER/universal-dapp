@@ -1,4 +1,4 @@
-import { View, Text } from 'dripsy'
+import { H3, Container, View, Text } from 'dripsy'
 import { createParam } from 'solito'
 import { TextLink } from 'solito/link'
 
@@ -8,12 +8,14 @@ export function UserDetailScreen() {
   const [id] = useParam('id')
 
   return (
-    <View sx={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text
-        sx={{ textAlign: 'center', mb: 16, fontWeight: 'bold' }}
-      >{`User ID: ${id}`}</Text>
+    <View variant={'layout.background'}>
+      <Container variant={'centered'}>
+        <H3 sx={{ mb: 'lg' }}>{`User ID: ${id}`}</H3>
 
-      <TextLink href="/">👈 Go Home</TextLink>
+        <TextLink href="/">
+          <Text variant={'link'}>👈 Go Home</Text>
+        </TextLink>
+      </Container>
     </View>
   )
 }

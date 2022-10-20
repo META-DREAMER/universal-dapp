@@ -4,7 +4,10 @@
     "noUncheckedIndexedAccess": true,
     "paths": {
       "app/*": ["./packages/app/*"]
-    }
+    },
+    "typeRoots": [
+      "expo-router/ts-declarations"
+    ]
   },
   "extends": "expo/tsconfig.base"
 }

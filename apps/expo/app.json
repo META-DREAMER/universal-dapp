@@ -1,15 +1,16 @@
 {
   "expo": {
-    "name": "solito-blank",
-    "slug": "solito-blank",
+    "name": "METADREAM",
+    "slug": "mdwtf",
     "version": "1.0.0",
-    "scheme": "solito-blank",
+    "scheme": "mdwtf",
     "platforms": [
       "ios",
       "android"
     ],
     "ios": {
-      "bundleIdentifier": "com.solito.blank"
-    }
+      "bundleIdentifier": "wtf.md.app"
+    },
+    "userInterfaceStyle": "automatic"
   }
 }
