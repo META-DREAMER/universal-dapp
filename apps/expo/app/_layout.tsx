@@ -8,7 +8,20 @@ export default function _layout() {
   return (
     <Provider>
       <RootContainer theme={colorMode === 'dark' ? DarkTheme : DefaultTheme} />
-      <Stack />
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen
+          name="settings"
+          options={{ presentation: 'modal', title: 'Settings' }}
+        />
+      </Stack>
+      {/*<Tabs>*/}
+      {/*  <Tabs.Screen*/}
+      {/*    name="(layout)"*/}
+      {/*    options={{ headerShown: false, title: 'Home' }}*/}
+      {/*  />*/}
+      {/*  <Tabs.Screen name="second" options={{ title: 'Second' }} />*/}
+      {/*</Tabs>*/}
     </Provider>
   )
 }

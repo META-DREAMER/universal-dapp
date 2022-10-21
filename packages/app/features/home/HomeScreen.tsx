@@ -43,7 +43,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
         <View sx={{ height: 32 }} />
         <Row>
           <TextLink
-            href="/user/fernando"
+            href="/fernando"
             textProps={{
               style: sx({
                 variant: 'text.link',
@@ -54,7 +54,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
           </TextLink>
           <View sx={{ width: 32 }} />
           <MotiLink
-            href="/user/fernando"
+            href="/settings"
             animate={({ hovered, pressed }) => {
               'worklet'
 
@@ -68,7 +68,9 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
               duration: 150,
             }}
           >
-            <Text selectable={false}>Moti Link</Text>
+            <Text selectable={false} variant={'link'} sx={{ color: '$alert' }}>
+              Moti Link
+            </Text>
           </MotiLink>
         </Row>
       </Container>
