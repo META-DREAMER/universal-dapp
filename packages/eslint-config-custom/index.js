@@ -1,16 +1,14 @@
 module.exports = {
   extends: [
+    'eslint:recommended',
+    'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@next/next/recommended',
     'prettier',
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  settings: {
+    next: {
+      rootDir: '../../apps/next/',
     },
-    ecmaVersion: 12,
-    sourceType: 'module',
   },
   plugins: ['@typescript-eslint'],
   ignorePatterns: ['.eslintrc.js', '*.config.js'],
