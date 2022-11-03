@@ -1,6 +1,5 @@
-// theme.ts
-import { makeTheme } from 'dripsy'
-import { Platform } from 'react-native'
+import { makeTheme } from 'dripsy';
+import { fontName, fontNames, webFont } from './fonts';
 
 const darkColors = {
   $background: 'rgb(1, 1, 1)',
@@ -9,7 +8,7 @@ const darkColors = {
   $border: 'rgb(39, 39, 41)',
   $alert: 'rgb(255, 69, 58)',
   $primary: '#c8e400',
-}
+};
 
 const lightColors: typeof darkColors = {
   $background: 'rgb(242, 242, 242)',
@@ -18,14 +17,7 @@ const lightColors: typeof darkColors = {
   $border: 'rgb(216, 216, 216)',
   $alert: 'rgb(255, 59, 48)',
   $primary: '#ABC200',
-}
-
-export const fontName = 'Inter'
-const webFont = (font: string) =>
-  Platform.select({
-    web: `${font}, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, Inter-serif`,
-    default: font,
-  })
+};
 
 const theme = makeTheme({
   colors: darkColors,
@@ -55,17 +47,17 @@ const theme = makeTheme({
   },
   customFonts: {
     [fontName]: {
-      bold: webFont('InterBold'),
-      default: webFont(fontName),
-      normal: webFont(fontName),
-      '200': webFont('InterLight'),
-      '300': webFont('InterLight'),
+      bold: webFont(fontNames.bold),
+      default: webFont(fontNames.normal),
+      normal: webFont(fontNames.normal),
+      '200': webFont(fontNames.light),
+      '300': webFont(fontNames.light),
       '400': webFont(fontName),
       '500': webFont(fontName),
-      '600': webFont('InterBold'),
-      '700': webFont('InterBold'),
-      '800': webFont('InterBlack'),
-      '900': webFont('InterBlack'),
+      '600': webFont(fontNames.bold),
+      '700': webFont(fontNames.bold),
+      '800': webFont(fontNames.bold),
+      '900': webFont(fontNames.bold),
     },
   },
   fonts: {
@@ -73,8 +65,8 @@ const theme = makeTheme({
   },
   fontWeights: {
     light: '200',
+    normal: '400',
     bold: '700',
-    black: '900',
   },
   text: {
     body: {
@@ -88,6 +80,7 @@ const theme = makeTheme({
     h1: {
       color: '$text',
       fontWeight: 'bold',
+      letterSpacing: -2,
     },
     h2: {
       color: '$text',
@@ -117,18 +110,18 @@ const theme = makeTheme({
       alignItems: 'center',
     },
   },
-})
+});
 
 const themeLight = {
   ...theme,
   colors: lightColors,
-}
+};
 
-type MyTheme = typeof theme
+type MyTheme = typeof theme;
 
 declare module 'dripsy' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DripsyCustomTheme extends MyTheme {}
 }
 
-export { theme, themeLight }
+export { theme, themeLight };
