@@ -6,7 +6,6 @@ module.exports = function (api) {
         'babel-preset-expo',
         {
           importSource: '@welldone-software/why-did-you-render',
-          jsxRuntime: 'automatic',
         },
       ],
     ],

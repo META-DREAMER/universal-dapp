@@ -1,5 +1,5 @@
 // @ts-check
-const { theme } = require('app/tailwind/theme');
+const { theme } = require('app/ui/theme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

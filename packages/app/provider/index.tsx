@@ -1,10 +1,6 @@
-import { Dripsy } from './dripsy';
-import { Fonts } from './fonts';
+// import { Fonts } from './fonts';
+import { SafeArea } from './safe-area';
 
 export function Provider({ children }: { children: React.ReactNode }) {
-  return (
-    <Fonts>
-      <Dripsy>{children}</Dripsy>
-    </Fonts>
-  );
+  return <SafeArea>{children}</SafeArea>;
 }

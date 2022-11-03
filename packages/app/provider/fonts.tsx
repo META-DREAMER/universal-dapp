@@ -5,7 +5,7 @@ import {
   Inter_700Bold,
   Inter_300Light,
 } from '@expo-google-fonts/inter';
-import { fontNames } from '../theme/fonts';
+import { fontNames } from '../ui/theme/fonts';
 
 type Props = {
   children: React.ReactNode;
