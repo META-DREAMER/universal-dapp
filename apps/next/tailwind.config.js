@@ -1,5 +1,6 @@
 // @ts-check
 const { theme } = require('app/ui/theme');
+const nativewind = require('nativewind/tailwind');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -10,6 +11,6 @@ module.exports = {
   theme: {
     ...theme,
   },
-  plugins: [require('nativewind/tailwind/css')],
+  presets: [nativewind],
   important: 'html',
 };

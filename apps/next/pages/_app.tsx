@@ -4,6 +4,8 @@ import React from 'react';
 import { type SolitoAppProps } from 'solito';
 import 'raf/polyfill';
 import '../global.css';
+import '@rainbow-me/rainbowkit/styles.css';
+import { Session } from 'next-auth';
 
 // FIXME need reanimated update, see https://github.com/software-mansion/react-native-reanimated/issues/3355
 if (process.browser) {
@@ -11,18 +13,23 @@ if (process.browser) {
   window._frameTimestamp = null;
 }
 
-function MyApp({ Component, pageProps }: SolitoAppProps) {
+function MyApp({
+  Component,
+  pageProps,
+}: SolitoAppProps<{
+  session: Session;
+}>) {
   return (
     <>
       <Head>
-        <title>Solito Example App</title>
+        <title>METADREAM</title>
         <meta
           name="description"
-          content="Expo + Next.js with Solito. By Fernando Rojo."
+          content="Universal Dapp Built With React Native Web"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Provider>
+      <Provider session={pageProps.session}>
         <Component {...pageProps} />
       </Provider>
     </>

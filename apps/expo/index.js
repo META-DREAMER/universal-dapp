@@ -1,1 +1,2 @@
-import 'expo-router/entry'
+import './shim';
+import 'expo-router/entry';

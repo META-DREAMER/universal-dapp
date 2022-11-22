@@ -11,6 +11,6 @@ module.exports = {
     },
   },
   plugins: ['@typescript-eslint'],
-  ignorePatterns: ['.eslintrc.js', '*.config.js'],
+  ignorePatterns: ['.eslintrc.js', '*.config.js', 'shim.js'],
   root: true,
 };

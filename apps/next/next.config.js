@@ -23,6 +23,9 @@ const nextConfig = {
     forceSwcTransforms: true,
     swcPlugins: [[require.resolve('./plugins/swc_plugin_reanimated.wasm')]],
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 const transform = withPlugins([
@@ -31,6 +34,7 @@ const transform = withPlugins([
   withImages,
   [withExpo, { projectRoot: __dirname + '/../..' }],
 ]);
+
 module.exports = function (name, { defaultConfig }) {
   return transform(name, {
     ...defaultConfig,

@@ -1,3 +1,4 @@
+// import 'app/provider/web3/shim';
 import { Provider } from 'app/provider';
 import { Tabs, RootContainer } from 'expo-router';
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
