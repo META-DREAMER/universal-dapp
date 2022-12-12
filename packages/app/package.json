@@ -28,7 +28,9 @@
     "wagmi": "^0.7.10"
   },
   "devDependencies": {
-    "tsconfig": "*"
+    "@radix-ui/colors": "^0.1.8",
+    "tsconfig": "*",
+    "windy-radix-palette": "^0.3.0"
   },
   "sideEffects": false
 }

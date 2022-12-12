@@ -1,8 +1,8 @@
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { RainbowKitSiweNextAuthProvider } from '@rainbow-me/rainbowkit-siwe-next-auth';
 import { WagmiConfig } from 'wagmi';
 import { chains } from './chains';
 import { wagmiClient } from './wagmiClient';
+import { RainbowKitSiweNextAuthProvider } from './rainbowKit';
 import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
