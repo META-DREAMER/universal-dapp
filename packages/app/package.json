@@ -28,7 +28,7 @@
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",
     "tsconfig": "*",
-    "windy-radix-palette": "^0.3.0"
+    "windy-radix-palette": "^0.4.1"
   },
   "sideEffects": false
 }

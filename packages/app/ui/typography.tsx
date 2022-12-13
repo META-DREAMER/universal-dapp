@@ -8,24 +8,30 @@ export const Text = styled(NativeText);
 /**
  * You can use this pattern to create components with default styles
  */
-export const P = styled(NativeText, 'text-base text-black my-4');
+export const P = styled(NativeText, 'text-base text-gray-12 my-4');
 
 /**
  * Components can have defaultProps and styles
  */
-export const H1 = styled(NativeText, 'text-3xl font-extrabold my-4');
+export const H1 = styled(
+  NativeText,
+  'text-3xl text-gray-12 font-extrabold my-4'
+);
 H1.defaultProps = {
   accessibilityLevel: 1,
   accessibilityRole: 'header',
 };
 
-export const H2 = styled(NativeText, 'text-2xl font-extrabold my-3');
+export const H2 = styled(
+  NativeText,
+  'text-2xl text-gray-12 font-extrabold my-3'
+);
 H2.defaultProps = {
   accessibilityLevel: 2,
   accessibilityRole: 'header',
 };
 
-export const H3 = styled(NativeText, 'text-xl font-bold my-3');
+export const H3 = styled(NativeText, 'text-xl text-gray-12 font-bold my-3');
 H3.defaultProps = {
   accessibilityLevel: 3,
   accessibilityRole: 'header',
@@ -65,7 +71,7 @@ export const A = forwardRef<NativeText, ClassProp & AProps>(function A(
   return (
     <Text
       accessibilityRole="link"
-      className={`text-blue-500 hover:underline ${className}`}
+      className={`text-blue-11 hover:underline ${className}`}
       {...props}
       {...nativeAProps}
       ref={ref}
@@ -92,4 +98,4 @@ export const TextLink = styled(function TextLink({
     </SolitoTextLink>
   );
 },
-'text-base font-bold hover:underline text-blue-500');
+'text-base font-bold hover:underline text-blue-11');

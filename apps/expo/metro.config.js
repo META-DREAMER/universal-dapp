@@ -5,6 +5,7 @@
  */
 const { getDefaultConfig } = require('expo/metro-config');
 const extraNodeModules = require('node-libs-react-native');
+const withNativewind = require('nativewind/metro');
 const path = require('path');
 
 const projectRoot = __dirname;
@@ -34,4 +35,4 @@ config.resolver.extraNodeModules = extraNodeModules;
 //   },
 // });
 
-module.exports = config;
+module.exports = withNativewind(config);

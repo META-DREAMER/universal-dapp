@@ -8,6 +8,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-gray-1 text-gray-12;
+  }
+
+  /*::selection {*/
+  /*  @apply bg-blue-6;*/
+  /*}*/
+}
+
 /**
  * Building on the RNWeb reset:
  * https://github.com/necolas/react-native-web/blob/master/packages/react-native-web/src/exports/StyleSheet/initialRules.js

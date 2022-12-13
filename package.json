@@ -6,11 +6,11 @@
     "packages/*"
   ],
   "devDependencies": {
-    "eslint-config-custom": "*",
     "@babel/eslint-parser": "^7.19.1",
     "@types/react": "~18.0.21",
     "@types/react-native": "~0.69.5",
     "eslint": "^8.21.0",
+    "eslint-config-custom": "*",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "^1.4.2",
@@ -31,5 +31,6 @@
   "nohoist": [
     "**/expo-router",
     "**/expo-router/**"
-  ]
+  ],
+  "packageManager": "yarn@3.3.0"
 }
