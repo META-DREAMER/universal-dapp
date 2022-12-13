@@ -150,6 +150,9 @@ const lightColors = {
 
   yellow: radixColors.yellow,
   yellowA: radixColors.yellowA,
+
+  blue: radixColors.blue,
+  blueA: radixColors.blueA,
 };
 
 const darkColors = {
@@ -173,6 +176,9 @@ const darkColors = {
 
   yellowDark: radixColors.yellowDark,
   yellowDarkA: radixColors.yellowDarkA,
+
+  blueDark: radixColors.blueDark,
+  blueDarkA: radixColors.blueDarkA,
 };
 
 module.exports = {

@@ -1,10 +1,8 @@
-# METADREAM Monorepo
+# Universal Dapp Monorepo
 
 ## 🔦 About
 
-This monorepo is a blank(ish) starter for an Expo + Next.js app.
-
-While it's pretty barebones, it does a lot of the annoying config for you. The folder structure is opinionated, based on my long experience building for this stack.
+This monorepo is a starter for an Expo + Next.js web3 dapp.
 
 ## 📦 Included packages
 
@@ -12,8 +10,8 @@ While it's pretty barebones, it does a lot of the annoying config for you. The f
 - `moti` for animations
 - `nativewind` for theming/design (you can bring your own, too)
 - Expo SDK 46
-- Next.js 12
-- React Navigation 6
+- Next.js 13
+- Expo Router
 
 ## 🗂 Folder layout
 

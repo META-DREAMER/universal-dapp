@@ -1,18 +1,20 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // @ts-check
-const { lightColors, darkColors } = require('app/ui/theme/colors');
+const { toRadixVar, toRadixVars } = require('windy-radix-palette/vars');
 
-/** @param {{ [s: string]: { [s: string]: any; } | string; }} colors */
-const createColorVariables = (colors) => {
+/**
+ * Generates CSS variables for given set of colors
+ * @param {{ [s: string]: { [s: string]: any; } | string; }} colors */
+const createAliasColorVariables = (colors) => {
   /** @type {{ [s: string]: any; }} */
   let colorMap = {};
 
   for (const [colorName, colorObj] of Object.entries(colors)) {
     if (typeof colorObj === 'string') {
       colorMap[`--${colorName}`] = colorObj;
-    } else {
+    } else if (colorObj) {
       for (const [key, value] of Object.entries(colorObj)) {
-        colorMap[`--${key}`] = value;
+        colorMap[`--${colorName}${key}`] = value;
       }
     }
   }
@@ -20,64 +22,45 @@ const createColorVariables = (colors) => {
   return colorMap;
 };
 
-/** @param {{ [s: string]: any; }} colors */
-const createColorTheme = (colors) => {
-  /** @type {{ [s: string]: { [s: string]: string; }; }} */
-  const themeColors = {};
-
-  for (const [colorName, colorObj] of Object.entries(colors)) {
-    if (colorName.includes('Dark')) {
-      continue;
-    }
-
-    /** @type {{ [s: string]: string; }} */
-    const themeColor = {};
-    for (const key of Object.keys(colorObj)) {
-      const scale = key.replace(colorName, '');
-      themeColor[scale] = `var(--${colorName}${scale})`;
-    }
-
-    themeColors[colorName] = themeColor;
-  }
-
-  return themeColors;
-};
-
 /** @param {{ [s: string]: any; }} aliases */
 const createAliasTheme = (aliases) => {
-  /** @type {{ [s: string]: string; }} */
+  /** @type {{ [s: string]: { [s: string]: any; } | string; }} */
   const themeColors = {};
 
-  for (const colorName of Object.keys(aliases)) {
-    themeColors[colorName] = `var(--${colorName})`;
+  for (const [colorName, colorObj] of Object.entries(aliases)) {
+    if (typeof colorObj === 'string') {
+      themeColors[colorName] = `var(--${colorName})`;
+    } else if (colorObj) {
+      themeColors[colorName] = toRadixVars(colorName);
+    }
   }
 
   return themeColors;
 };
 
-const colorTheme = createColorTheme(lightColors);
-
 const aliasLightColors = {
-  appBg: colorTheme.gray.gray1,
-  appBgSubtle: colorTheme.gray.gray2,
-  panel: colorTheme.gray.gray3,
-  panelHover: colorTheme.gray.gray4,
-  shadow: colorTheme.grayA.grayA3,
-  overlay: colorTheme.blackA.blackA8,
+  appBg: toRadixVar('gray', 1),
+  appBgSubtle: toRadixVar('gray', 2),
+  panel: toRadixVar('gray', 3),
+  panelHover: toRadixVar('gray', 4),
+  shadow: toRadixVar('grayA', 3),
+  overlay: toRadixVar('blackA', 8),
+  border: toRadixVar('gray', 6),
+  text: toRadixVar('gray', 12),
+  subtleText: toRadixVar('gray', 11),
+  brand: toRadixVars('teal'),
 };
 
 const aliasDarkColors = {
   ...aliasLightColors,
-  shadow: colorTheme.blackA.blackA12,
-  overlay: colorTheme.blackA.blackA12,
+  shadow: toRadixVar('blackA', 12),
+  overlay: toRadixVar('blackA', 12),
 };
 
-const lightColorVariables = createColorVariables({
-  ...lightColors,
+const lightColorVariables = createAliasColorVariables({
   ...aliasLightColors,
 });
-const darkColorVariables = createColorVariables({
-  ...darkColors,
+const darkColorVariables = createAliasColorVariables({
   ...aliasDarkColors,
 });
 
@@ -85,16 +68,10 @@ const aliasTheme = createAliasTheme(aliasLightColors);
 
 /** @type {import('tailwindcss').Config['theme']} */
 const theme = {
-  // edit your tailwind theme here!
-  // https://tailwindcss.com/docs/adding-custom-styles
-  // extend: {
-  //   colors: {
-  //     ...lightColors,
-  //   },
-  // },
-  colors: {
-    ...colorTheme,
-    ...aliasTheme,
+  extend: {
+    colors: {
+      ...aliasTheme,
+    },
   },
   variables: {
     ...lightColorVariables,
@@ -103,6 +80,7 @@ const theme = {
     ...darkColorVariables,
   },
 };
+console.log(theme);
 
 module.exports = {
   theme,

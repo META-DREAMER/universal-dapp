@@ -1,8 +1,9 @@
-import { chain, configureChains } from 'wagmi';
+import { configureChains } from 'wagmi';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import * as config from 'app/config/env';
+import { mainnet, polygon, optimism } from 'wagmi/chains';
 
 const GnosisChain = {
   id: 100,
@@ -14,7 +15,9 @@ const GnosisChain = {
     symbol: 'xDai',
   },
   rpcUrls: {
-    default: 'https://rpc.ankr.com/gnosis',
+    default: {
+      http: ['https://rpc.ankr.com/gnosis'],
+    },
   },
   blockExplorers: {
     default: { name: 'Blockscout', url: 'https://blockscout.com/xdai/mainnet' },
@@ -25,7 +28,7 @@ const GnosisChain = {
 };
 
 export const { chains, provider, webSocketProvider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, GnosisChain],
+  [mainnet, polygon, optimism, GnosisChain],
   [
     alchemyProvider({ apiKey: config.ALCHEMY_ID }),
     jsonRpcProvider({ rpc: () => ({ http: 'https://rpc.ankr.com/gnosis' }) }),

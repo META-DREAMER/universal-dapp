@@ -1,13 +1,17 @@
 import { MotiLink } from 'solito/moti';
-import Ionicons from '@expo/vector-icons/Ionicons';
+// import Ionicons from '@expo/vector-icons/Ionicons';
 import { View } from 'app/ui/view';
 import { H1, P, A, TextLink, Text } from 'app/ui/typography';
 import { Row } from 'app/ui/layout';
+import { useColorScheme } from 'nativewind';
+import { Button } from 'app/ui/Button';
 
 type HomeProps = {
   text: string;
 };
 export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+
   return (
     <View className="flex-1 items-center justify-center p-3">
       <H1>Welcome to Solito.</H1>
@@ -33,8 +37,13 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
         </P>
         <P className="text-center">
           Cross Platform Expo Vector Icon{' '}
-          <Ionicons name="md-checkmark-circle" size={32} color="green" />
+          {/*<Ionicons name="md-checkmark-circle" size={32} color="green" />*/}
         </P>
+        <Button
+          intent="secondary"
+          label={`Toggle Theme (${colorScheme})`}
+          onPress={toggleColorScheme}
+        />
       </View>
       <View className="h-[32px]" />
       <Row>
@@ -57,7 +66,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
         >
           <Text
             selectable={false}
-            className="text-base font-bold text-green-500"
+            className="text-green-10 text-base font-bold"
           >
             Moti Link
           </Text>

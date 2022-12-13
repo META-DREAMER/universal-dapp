@@ -18,7 +18,7 @@ export const ConnectWalletButton = () => {
   const { disconnect } = useDisconnect();
 
   const account = useAccount();
-  const { data: balance } = useBalance({ addressOrName: account?.address });
+  const { data: balance } = useBalance({ address: account?.address });
 
   useEffect(() => {
     if (connector?.accounts?.length && !account) {
@@ -26,6 +26,7 @@ export const ConnectWalletButton = () => {
     } else {
       disconnect();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [connector]);
 
   if (account) {

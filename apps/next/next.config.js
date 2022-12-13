@@ -17,27 +17,35 @@ const nextConfig = {
   // https://github.com/nandorojo/moti/issues/224
   // once that gets fixed, set this back to true
   reactStrictMode: false,
-  webpack5: true,
+  swcMinify: true,
+  // webpack5: true,
   experimental: {
     scrollRestoration: true,
     forceSwcTransforms: true,
     swcPlugins: [[require.resolve('./plugins/swc_plugin_reanimated.wasm')]],
+    transpilePackages: ['app', 'solito', 'nativewind', 'moti'],
   },
   typescript: {
     ignoreBuildErrors: true,
   },
 };
 
-const transform = withPlugins([
+const nextPlugins = [
   withTM,
   withFonts,
   withImages,
-  [withExpo, { projectRoot: __dirname + '/../..' }],
-]);
+  // [withExpo, { projectRoot: __dirname + '/../..' }],
+  withExpo,
+];
 
+const transform = withPlugins(nextPlugins);
+
+// https://github.com/cyrilwanner/next-compose-plugins/issues/59
 module.exports = function (name, { defaultConfig }) {
   return transform(name, {
     ...defaultConfig,
     ...nextConfig,
   });
 };
+
+// module.exports = withPlugins(nextPlugins, nextConfig);
