@@ -1,5 +1,5 @@
 import { MotiLink } from 'solito/moti';
-import Ionicons from '@expo/vector-icons/Ionicons';
+// import Ionicons from '@expo/vector-icons/Ionicons';
 import { View } from 'app/ui/view';
 import { H1, P, A, TextLink, Text } from 'app/ui/typography';
 import { Row } from 'app/ui/layout';
@@ -33,7 +33,7 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
         </P>
         <P className="text-center">
           Cross Platform Expo Vector Icon{' '}
-          <Ionicons name="md-checkmark-circle" size={32} color="green" />
+          {/*<Ionicons name="md-checkmark-circle" size={32} color="green" />*/}
         </P>
       </View>
       <View className="h-[32px]" />

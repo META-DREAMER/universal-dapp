@@ -9,11 +9,9 @@
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.2",
     "@expo/vector-icons": "^13.0.0",
-    "@rainbow-me/rainbowkit": "^0.7.4",
-    "@rainbow-me/rainbowkit-siwe-next-auth": "^0.1.4",
+    "@rainbow-me/rainbowkit": "^0.8.1",
+    "@rainbow-me/rainbowkit-siwe-next-auth": "^0.1.5",
     "@react-native-async-storage/async-storage": "~1.17.3",
-    "@react-navigation/native": "^6.0.8",
-    "@react-navigation/native-stack": "^6.5.0",
     "@tanstack/query-async-storage-persister": "^4.14.1",
     "@tanstack/react-query-persist-client": "^4.14.1",
     "@walletconnect/react-native-dapp": "^1.8.0",
@@ -24,8 +22,8 @@
     "next-auth": "^4.16.4",
     "react-native-reanimated": "2.9.1",
     "react-native-webview": "^11.23.1",
-    "solito": "latest",
-    "wagmi": "^0.7.10"
+    "solito": "^2.1.0",
+    "wagmi": "^0.9.2"
   },
   "devDependencies": {
     "@radix-ui/colors": "^0.1.8",

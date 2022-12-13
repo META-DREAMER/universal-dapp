@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
+import { NativeWindStyleSheet } from 'nativewind';
 
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 import type { DocumentContext } from 'next/document';
@@ -17,7 +18,7 @@ class Document extends NextDocument {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" style={NativeWindStyleSheet.getSSRStyles()}>
         <Head>
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
