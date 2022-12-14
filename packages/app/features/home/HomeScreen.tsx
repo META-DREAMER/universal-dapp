@@ -5,6 +5,7 @@ import { H1, P, A, TextLink, Text } from 'app/ui/typography';
 import { Row } from 'app/ui/layout';
 import { useColorScheme } from 'nativewind';
 import { Button } from 'app/ui/Button';
+import { ConnectWalletButton } from 'app/lib/ConnectWalletButton';
 
 type HomeProps = {
   text: string;
@@ -39,7 +40,15 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
           Cross Platform Expo Vector Icon{' '}
           {/*<Ionicons name="md-checkmark-circle" size={32} color="green" />*/}
         </P>
+        <ConnectWalletButton />
         <Button
+          className="mt-4"
+          label={`Primary Button`}
+          // onPress={toggleColorScheme}
+        />
+
+        <Button
+          className="mt-4"
           intent="secondary"
           label={`Toggle Theme (${colorScheme})`}
           onPress={toggleColorScheme}

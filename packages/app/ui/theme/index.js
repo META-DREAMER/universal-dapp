@@ -73,6 +73,14 @@ const theme = {
       ...aliasTheme,
     },
   },
+  borderRadius: {
+    none: '0',
+    sm: 'var(--border-sm)',
+    DEFAULT: 'var(--border-md)',
+    md: 'var(--border-md)',
+    lg: 'var(--border-lg)',
+    full: '9999px',
+  },
   variables: {
     ...lightColorVariables,
   },

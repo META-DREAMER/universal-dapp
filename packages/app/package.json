@@ -15,6 +15,7 @@
     "@tanstack/query-async-storage-persister": "^4.14.1",
     "@tanstack/react-query-persist-client": "^4.14.1",
     "@walletconnect/react-native-dapp": "^1.8.0",
+    "connectkit": "^1.1.1",
     "ethers": "^5.7.2",
     "expo-font": "^10.2.1",
     "moti": "^0.19.0-alpha.6",
