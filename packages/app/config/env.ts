@@ -22,3 +22,4 @@ export const NEXTAUTH_URL = getEnvValue(
 );
 
 export const NEXTAUTH_SECRET = getEnvValue(process.env.NEXTAUTH_SECRET, '');
+export const SESSION_SECRET = getEnvValue(process.env.SESSION_SECRET, '');
