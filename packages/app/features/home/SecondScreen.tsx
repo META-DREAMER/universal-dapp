@@ -1,15 +1,13 @@
-import { View } from 'app/ui/view';
+import { Box } from 'app/ui/Box';
 import { ConnectWalletButton } from 'app/lib/ConnectWalletButton';
 
 type SecondScreenProps = {
   title?: string;
 };
-export const SecondScreen: React.FC<SecondScreenProps> = ({
-  title = 'Second Screen',
-}) => {
+export const SecondScreen: React.FC<SecondScreenProps> = () => {
   return (
-    <View className="flex-1 items-center justify-center">
+    <Box className="flex-1 items-center justify-center">
       <ConnectWalletButton />
-    </View>
+    </Box>
   );
 };

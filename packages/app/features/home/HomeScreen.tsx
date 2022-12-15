@@ -1,28 +1,23 @@
 import { MotiLink } from 'solito/moti';
-// import Ionicons from '@expo/vector-icons/Ionicons';
-import { View } from 'app/ui/view';
+import { Box } from 'app/ui/Box';
 import { H1, P, A, TextLink, Text } from 'app/ui/typography';
 import { Row } from 'app/ui/layout';
 import { useColorScheme } from 'nativewind';
 import { Button } from 'app/ui/Button';
 import { ConnectWalletButton } from 'app/lib/ConnectWalletButton';
 
-type HomeProps = {
-  text: string;
-};
-export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
+export const HomeScreen: React.FC = () => {
   const { colorScheme, toggleColorScheme } = useColorScheme();
 
   return (
-    <View className="flex-1 items-center justify-center p-3">
-      <H1>Welcome to Solito.</H1>
-      <View className="max-w-xl">
+    <Box className="flex-1 items-center justify-center p-3">
+      <H1 className={'text-teal-6'}>Welcome to Solito.</H1>
+      <Box className="max-w-xl">
         <P className="text-center">
           Here is a basic starter to show you how you can navigate from one
           screen to another. This screen uses the same code on Next.js and React
           Native.
         </P>
-        <P className="text-center">{text}</P>
         <P className="text-center">
           Solito is made by{' '}
           <A
@@ -53,11 +48,11 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
           label={`Toggle Theme (${colorScheme})`}
           onPress={toggleColorScheme}
         />
-      </View>
-      <View className="h-[32px]" />
+      </Box>
+      <Box className="h-[32px]" />
       <Row>
         <TextLink href="/fernando">Regular Link</TextLink>
-        <View className="w-[32px]" />
+        <Box className="w-[32px]" />
         <MotiLink
           href="/settings"
           animate={({ hovered, pressed }) => {
@@ -81,6 +76,6 @@ export const HomeScreen: React.FC<HomeProps> = ({ text }) => {
           </Text>
         </MotiLink>
       </Row>
-    </View>
+    </Box>
   );
 };

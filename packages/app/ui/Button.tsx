@@ -8,6 +8,7 @@ const ButtonContainer = styled(
   {
     variants: {
       intent: {
+        icon: 'bg-transparent rounded-sm border-transparent text-grayA-12 active:text-grayA-11',
         primary:
           'bg-teal-4 border-transparent hover:bg-teal-5 active:bg-teal-6',
         secondary:
@@ -16,6 +17,7 @@ const ButtonContainer = styled(
       size: {
         small: 'py-1 px-2',
         medium: 'py-2 px-4',
+        icon: 'p-2',
       },
     },
     defaultProps: {
@@ -30,9 +32,11 @@ const ButtonText = styled(Text, 'font-semibold', {
     intent: {
       primary: 'text-teal-11',
       secondary: 'text-gray-11',
+      icon: 'text-gray-11',
     },
     size: {
       small: 'text-sm',
+      icon: 'text-sm',
       medium: 'text-base',
     },
   },
@@ -43,17 +47,23 @@ const ButtonText = styled(Text, 'font-semibold', {
 });
 
 type ButtonProps = React.ComponentProps<typeof ButtonContainer> & {
-  label: string;
+  label?: string;
 };
 export const Button: React.FC<ButtonProps> = ({
   intent,
   size,
   label,
+  children,
   ...props
 }) => (
   <ButtonContainer intent={intent} size={size} {...props}>
-    <ButtonText intent={intent} size={size}>
-      {label}
-    </ButtonText>
+    <>
+      {children}
+      {label ? (
+        <ButtonText intent={intent} size={size}>
+          {label}
+        </ButtonText>
+      ) : null}
+    </>
   </ButtonContainer>
 );

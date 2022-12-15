@@ -83,19 +83,34 @@ export const A = forwardRef<NativeText, ClassProp & AProps>(function A(
  * Solito's TextLink doesn't work directly with styled() since it has a textProps prop
  * By wrapping it in a function, we can forward style down properly.
  */
-export const TextLink = styled(function TextLink({
-  style,
-  textProps,
-  children,
-  ...props
-}) {
-  return (
-    <SolitoTextLink
-      textProps={{ ...textProps, style: [style, textProps?.style] }}
-      {...props}
-    >
-      {children}
-    </SolitoTextLink>
-  );
-},
-'text-base font-bold hover:underline text-blue-11');
+export const TextLink = styled(
+  function TextLink({
+    style,
+    textProps,
+    children,
+    ...props
+  }: React.ComponentProps<typeof SolitoTextLink>) {
+    return (
+      <SolitoTextLink
+        // @ts-expect-error css style number vs string
+        textProps={{ ...textProps, style: [style, textProps?.style] }}
+        {...props}
+      >
+        {children}
+      </SolitoTextLink>
+    );
+  },
+  'text-base transition font-bold',
+  {
+    variants: {
+      intent: {
+        primary: 'text-blue-11 hover:text-blue-9',
+        secondary: 'text-gray-11 hover:text-gray-12',
+      },
+    },
+    defaultProps: {
+      intent: 'primary',
+      size: 'medium',
+    },
+  }
+);
