@@ -4,7 +4,7 @@
  * @type {import('expo/metro-config')}
  */
 const { getDefaultConfig } = require('expo/metro-config');
-const extraNodeModules = require('node-libs-react-native');
+// const extraNodeModules = require('node-libs-react-native');
 const withNativewind = require('nativewind/metro');
 const path = require('path');
 
@@ -24,7 +24,7 @@ config.resolver.nodeModulesPaths = [
 config.resolver.disableHierarchicalLookup = true;
 
 // 4. Crypto polyfills for native
-config.resolver.extraNodeModules = extraNodeModules;
+// config.resolver.extraNodeModules = extraNodeModules;
 // config.resolver.sourceExts = ['ts', 'tsx', 'js', 'jsx', 'json', 'cjs'];
 // config.resolver.assetExts = ['glb', 'gltf', 'png', 'jpg'];
 
