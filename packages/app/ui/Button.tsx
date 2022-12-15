@@ -10,9 +10,9 @@ const ButtonContainer = styled(
       intent: {
         icon: 'bg-transparent rounded-sm border-transparent text-grayA-12 active:text-grayA-11',
         primary:
-          'bg-teal-4 border-transparent hover:bg-teal-5 active:bg-teal-6',
+          'bg-brandBg border-transparent hover:bg-brandBgHover active:bg-brandBgActive',
         secondary:
-          'bg-gray-3 border-gray-7 hover:bg-gray-4 hover:border-gray-8 active:bg-gray-5',
+          'bg-grayBg border-grayBorder hover:bg-grayBgHover hover:border-grayBorderHover active:bg-grayBgActive',
       },
       size: {
         small: 'py-1 px-2',
@@ -30,9 +30,9 @@ const ButtonContainer = styled(
 const ButtonText = styled(Text, 'font-semibold', {
   variants: {
     intent: {
-      primary: 'text-teal-11',
-      secondary: 'text-gray-11',
-      icon: 'text-gray-11',
+      primary: 'text-brandText',
+      secondary: 'text-grayText',
+      icon: 'text-grayText',
     },
     size: {
       small: 'text-sm',

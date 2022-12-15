@@ -1,21 +1,21 @@
 import { ComponentProps, forwardRef } from 'react';
 import { Text as NativeText, Platform, Linking } from 'react-native';
 import { styled, ClassProp } from 'nativewind';
-import { TextLink as SolitoTextLink } from 'solito/link';
+import { TextLink as SolitoTextLink, Link as SolitoLink } from 'solito/link';
 
 export const Text = styled(NativeText);
 
 /**
  * You can use this pattern to create components with default styles
  */
-export const P = styled(NativeText, 'text-base text-gray-12 my-4');
+export const P = styled(NativeText, 'text-base text-grayTextContrast my-4');
 
 /**
  * Components can have defaultProps and styles
  */
 export const H1 = styled(
   NativeText,
-  'text-3xl text-gray-12 font-extrabold my-4'
+  'text-3xl text-grayTextContrast font-extrabold my-4'
 );
 H1.defaultProps = {
   accessibilityLevel: 1,
@@ -24,14 +24,17 @@ H1.defaultProps = {
 
 export const H2 = styled(
   NativeText,
-  'text-2xl text-gray-12 font-extrabold my-3'
+  'text-2xl text-grayTextContrast font-extrabold my-3'
 );
 H2.defaultProps = {
   accessibilityLevel: 2,
   accessibilityRole: 'header',
 };
 
-export const H3 = styled(NativeText, 'text-xl text-gray-12 font-bold my-3');
+export const H3 = styled(
+  NativeText,
+  'text-xl text-grayTextContrast font-bold my-3'
+);
 H3.defaultProps = {
   accessibilityLevel: 3,
   accessibilityRole: 'header',
@@ -105,7 +108,7 @@ export const TextLink = styled(
     variants: {
       intent: {
         primary: 'text-blue-11 hover:text-blue-9',
-        secondary: 'text-gray-11 hover:text-gray-12',
+        secondary: 'text-grayText hover:text-grayTextContrast',
       },
     },
     defaultProps: {
@@ -114,3 +117,20 @@ export const TextLink = styled(
     },
   }
 );
+
+export const Link = styled(function Link({
+  style,
+  viewProps,
+  children,
+  ...props
+}: React.ComponentProps<typeof SolitoLink>) {
+  return (
+    <SolitoLink
+      // @ts-expect-error css style string literal type issue
+      viewProps={{ ...viewProps, style: [style, viewProps?.style] }}
+      {...props}
+    >
+      {children}
+    </SolitoLink>
+  );
+});

@@ -11,7 +11,7 @@ export const HomeScreen: React.FC = () => {
 
   return (
     <Box className="flex-1 items-center justify-center p-3">
-      <H1 className={'text-teal-6'}>Welcome to Solito.</H1>
+      <H1>Welcome to Solito.</H1>
       <Box className="max-w-xl">
         <P className="text-center">
           Here is a basic starter to show you how you can navigate from one

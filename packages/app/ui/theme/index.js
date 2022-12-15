@@ -71,6 +71,19 @@ const theme = {
   extend: {
     colors: {
       ...aliasTheme,
+      brand: toRadixVars('teal'),
+      brandText: toRadixVar('teal', 11),
+      brandTextContrast: toRadixVar('teal', 11),
+      brandBg: toRadixVar('teal', 4),
+      brandBgHover: toRadixVar('teal', 5),
+      brandBgActive: toRadixVar('teal', 6),
+      grayText: toRadixVar('gray', 11),
+      grayTextContrast: toRadixVar('gray', 12),
+      grayBg: toRadixVar('gray', 3),
+      grayBgHover: toRadixVar('gray', 4),
+      grayBgActive: toRadixVar('gray', 5),
+      grayBorder: toRadixVar('gray', 7),
+      grayBorderHover: toRadixVar('gray', 8),
     },
   },
   borderRadius: {

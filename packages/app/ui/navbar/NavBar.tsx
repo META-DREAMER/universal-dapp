@@ -1,10 +1,9 @@
 import React from 'react';
 import { Box } from 'app/ui/Box';
-import { Text, TextLink } from 'app/ui/typography';
+import { Link, Text, TextLink } from 'app/ui/typography';
 import MenuIcon from 'app/ui/icons/menu';
 import { Button } from 'app/ui/Button';
 import { ConnectWalletButton } from 'app/lib/ConnectWalletButton';
-import { Link } from 'solito/link';
 
 type NavBarProps = {
   links: Array<{ href: string; label: string }>;
@@ -13,15 +12,17 @@ type NavBarProps = {
 export const NavBar: React.FC<NavBarProps> = ({ links }) => {
   return (
     <Box className="bg-grayA-1 border-gray-6 sticky top-0 right-0 left-0 z-20 flex w-full flex-row items-center justify-between border-b p-4 backdrop-blur-md backdrop-saturate-150 lg:p-6">
-      <Box className="lg:hidden">
+      <Box className="mr-2 lg:hidden">
         <Button intent={'icon'} size={'icon'}>
           <MenuIcon />
         </Button>
       </Box>
-      <Link href="/">
-        <Box className="flex flex-row items-center">
-          <Box className="bg-teal-5 mr-2 h-8 w-8 rounded-full"></Box>
-          <Text className="text-xl font-semibold tracking-tight">My App</Text>
+      <Link className="flex-1 lg:flex-none" href="/">
+        <Box className="flex flex-row items-center justify-start">
+          <Box className="bg-brand-5 mr-2 h-8 w-8 rounded-full"></Box>
+          <Text className="text-grayTextContrast text-xl font-semibold tracking-tight">
+            My App
+          </Text>
         </Box>
       </Link>
 
