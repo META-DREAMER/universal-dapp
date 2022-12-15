@@ -2147,9 +2147,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@expo/cli@npm:0.3.1":
-  version: 0.3.1
-  resolution: "@expo/cli@npm:0.3.1"
+"@expo/cli@npm:0.3.2":
+  version: 0.3.2
+  resolution: "@expo/cli@npm:0.3.2"
   dependencies:
     "@babel/runtime": ^7.14.0
     "@expo/code-signing-certificates": ^0.0.2
@@ -2213,7 +2213,7 @@ __metadata:
     wrap-ansi: ^7.0.0
   bin:
     expo-internal: build/bin/cli
-  checksum: c2b75359bd0437992e4a0693ac1deff48e731acfdfc7ac9c70dbfe648f78baed763a9e7bf694a1027e302f4d969a43c82ef2bdd10e86262da17e686a465489a2
+  checksum: e70b387eb359cbe09be0be43811cb63840508d3eb3a101a28c66302bef5b3551c344483455c3c8185860cb524e8238c0aa12ea1be21663de782f3787aeaeac80
   languageName: node
   linkType: hard
 
@@ -9324,13 +9324,13 @@ __metadata:
     "@types/react-native": ~0.69.1
     app: "*"
     eslint-config-custom: "*"
-    expo: 46.0.15
+    expo: ~46.0.17
     expo-constants: ~13.2.4
     expo-crypto-polyfills: ^1.1.0
     expo-dev-client: ~1.3.1
     expo-linking: ~3.2.2
     expo-router: ^0.0.36
-    expo-splash-screen: ~0.16.1
+    expo-splash-screen: ~0.16.2
     expo-status-bar: ~1.4.0
     node-libs-react-native: ^1.2.1
     react: 18.2.0
@@ -9556,13 +9556,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-modules-core@npm:0.11.7":
-  version: 0.11.7
-  resolution: "expo-modules-core@npm:0.11.7"
+"expo-modules-core@npm:0.11.9":
+  version: 0.11.9
+  resolution: "expo-modules-core@npm:0.11.9"
   dependencies:
     compare-versions: ^3.4.0
     invariant: ^2.2.4
-  checksum: 2d1896af256579fdab0d5721ce1c437206ac5c8702b978899b3d4f303f2f31c053cc65469a21db421bfd31adaea1f6dff9ffdd447c01c82057a764209d9c8dc8
+  checksum: af130f8dd82967a0bde598cd109d44a2feec5692e0990f0e0eb1157a6a88419d52f0cbae09902fb6eddc2ed633d7cf10bf458ce43bbcd3372035d6bc9469813d
   languageName: node
   linkType: hard
 
@@ -9627,7 +9627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-splash-screen@npm:~0.16.1":
+"expo-splash-screen@npm:~0.16.2":
   version: 0.16.2
   resolution: "expo-splash-screen@npm:0.16.2"
   dependencies:
@@ -9655,12 +9655,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo@npm:46.0.15":
-  version: 46.0.15
-  resolution: "expo@npm:46.0.15"
+"expo@npm:~46.0.17":
+  version: 46.0.17
+  resolution: "expo@npm:46.0.17"
   dependencies:
     "@babel/runtime": ^7.14.0
-    "@expo/cli": 0.3.1
+    "@expo/cli": 0.3.2
     "@expo/vector-icons": ^13.0.0
     babel-preset-expo: ~9.2.0
     cross-spawn: ^6.0.5
@@ -9672,7 +9672,7 @@ __metadata:
     expo-font: ~10.2.1
     expo-keep-awake: ~10.2.0
     expo-modules-autolinking: 0.10.3
-    expo-modules-core: 0.11.7
+    expo-modules-core: 0.11.9
     fbemitter: ^3.0.0
     getenv: ^1.0.0
     invariant: ^2.2.4
@@ -9685,7 +9685,7 @@ __metadata:
       optional: true
   bin:
     expo: bin/cli.js
-  checksum: 89088fd1d031fe08d16161dc44ecee1b748cf0145dd78304f743f1c360a5199d9dcf6a45719d9d79ed86733b0d25ddf59ff96d205866f883242f674206ca2a22
+  checksum: 86c92de6359ae9fcc1c515934a173319104887c3706e4b80d77354a93d4d12c0ff2f9fd5133469c559fe92887f935a122a8b8240e545ae4758c196dab9e34c56
   languageName: node
   linkType: hard
 

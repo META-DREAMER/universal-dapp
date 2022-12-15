@@ -1,7 +1,7 @@
 // import { Fonts } from './fonts';
 import { SafeArea } from './safe-area';
 // import { Web3Provider } from 'app/provider/web3/Web3Provider';
-import { Web3Provider } from 'app/provider/web3/connectKit';
+import { Web3Provider } from 'app/provider/web3';
 import { Session } from 'next-auth';
 
 type ProviderProps = {
