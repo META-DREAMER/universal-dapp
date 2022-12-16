@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar } from 'app/ui/navbar/NavBar';
+import { NavBar } from 'app/ui/navbar';
 import { Box } from 'app/ui/Box';
 
 type NavLayoutProps = {

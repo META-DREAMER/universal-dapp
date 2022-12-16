@@ -101,7 +101,6 @@ const theme = {
     ...darkColorVariables,
   },
 };
-console.log(theme);
 
 module.exports = {
   theme,
