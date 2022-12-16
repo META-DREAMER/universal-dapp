@@ -1,7 +1,9 @@
 import { SecondScreen } from 'app/features/home/SecondScreen';
 import { useParam } from 'app/features/user/UserDetailScreen';
+import { NavLayout } from '../../lib/NavLayout';
+import { SolitoPage } from 'solito';
 
-export default function Posts() {
+const Posts: SolitoPage = () => {
   const [user] = useParam('user');
 
   return (
@@ -9,4 +11,8 @@ export default function Posts() {
       <SecondScreen title={`Posts by ${user}`} />
     </>
   );
-}
+};
+
+Posts.getLayout = (page) => <NavLayout>{page}</NavLayout>;
+
+export default Posts;

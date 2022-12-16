@@ -45,19 +45,20 @@
 //     fr.readAsDataURL(blob);
 //   };
 // }
-import 'react-native-get-random-values';
+// import 'react-native-get-random-values';
+
+global.btoa = global.btoa || require('react-native-quick-base64').btoa;
+global.atob = global.atob || require('react-native-quick-base64').atob;
+
 import '@ethersproject/shims';
 
-if (typeof BigInt === 'undefined') {
-  global.BigInt = require('big-integer');
-}
+// if (typeof BigInt === 'undefined') {
+//   global.BigInt = require('big-integer');
+// }
 
-if (typeof Buffer === 'undefined') {
-  global.Buffer = require('buffer').Buffer;
-}
-
-global.btoa = global.btoa || require('base-64').encode;
-global.atob = global.atob || require('base-64').decode;
+// if (typeof Buffer === 'undefined') {
+//   global.Buffer = require('buffer').Buffer;
+// }
 
 process.version = 'v9.40';
 process.browser = false;

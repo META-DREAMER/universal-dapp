@@ -17,9 +17,8 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "dev": "yarn turbo run dev --parallel --no-cache",
-    "native": "cd apps/expo && expo start",
-    "web": "cd apps/next && yarn next",
+    "native": "yarn apps/expo start",
+    "web": "yarn apps/next next",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck"
   },

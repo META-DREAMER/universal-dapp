@@ -1,5 +1,9 @@
-import { SettingsScreen } from 'app/features/settings/SettingsScreen'
+import { SettingsScreen } from 'app/features/settings/SettingsScreen';
+import { NavLayout } from '../lib/NavLayout';
+import { type SolitoPage } from 'solito';
 
-export default function Settings() {
-  return <SettingsScreen />
-}
+const Settings: SolitoPage = () => <SettingsScreen />;
+
+Settings.getLayout = (page) => <NavLayout>{page}</NavLayout>;
+
+export default Settings;

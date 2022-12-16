@@ -11,6 +11,29 @@
     "ios": {
       "bundleIdentifier": "wtf.md.app"
     },
-    "userInterfaceStyle": "automatic"
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "wtf.md.app"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9c33b539-1767-4df4-8e6c-04ed4b80a371"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 31,
+            "targetSdkVersion": 31,
+            "buildToolsVersion": "31.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "13.0"
+          }
+        }
+      ]
+    ]
   }
 }

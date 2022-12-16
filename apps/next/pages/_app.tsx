@@ -19,6 +19,8 @@ function MyApp({
 }: SolitoAppProps<{
   session: Session;
 }>) {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <>
       <Head>
@@ -30,7 +32,7 @@ function MyApp({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider session={pageProps.session}>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </Provider>
     </>
   );

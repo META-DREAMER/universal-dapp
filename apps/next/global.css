@@ -9,8 +9,14 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --border-lg: 1rem;
+    --border-md: 0.75rem;
+    --border-sm: 0.5rem;
+  }
+
   body {
-    @apply bg-gray-1 text-gray-12;
+    @apply bg-white dark:bg-gray-1 text-gray-12;
   }
 
   /*::selection {*/

@@ -9,7 +9,7 @@ module.exports = function (api) {
         {
           alias: {
             crypto: 'react-native-quick-crypto',
-            // stream: 'stream-browserify',
+            stream: 'stream-browserify',
             buffer: '@craftzdog/react-native-buffer',
             'bn.js': 'react-native-bignumber',
           },
